@@ -63,3 +63,38 @@
   width: 30px;
   height: 30px;
 }
+
+
+
+.lead {
+  height: 100vh;
+  color: #fff;
+  background-image: url(images/lead-background.jpg);
+  background-size: cover;
+  background-position: center;
+
+}
+
+.lead__overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+}
+
+.lead__title {
+  margin: 0;
+  margin-bottom: 50px;
+  font-size: 30px;
+}
+
+.lead__subtitle {
+  margin: 0;
+  margin-bottom: 50px;
+  font-size: 25px;
+}
+
+.lead__button {
+}
+
+
