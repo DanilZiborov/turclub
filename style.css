@@ -1,16 +1,51 @@
+/* @keyframes title-popup {
+  from {
+    transform: scale(.7);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+} */
+
+@keyframes up-and-down {
+  from {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+
+}
+
+
 .root {
   font-family: Lato, Arial, sans-serif;
   font-weight: 400;
+  height: 1000px;
+  background-color: gray;
 }
 
 .header {
+  box-sizing: border-box;
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+  width: 100%;
   height: 100px;
-  background-color: rgb(51, 51, 51);
+  background-color: rgb(51, 51, 51, .5);
   color: #fff;
+  z-index: 1;
 }
 
 .logo_place_header {
@@ -24,6 +59,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  color: #fff;
 }
 
 .header__navlink {
@@ -32,7 +68,7 @@
   color: inherit;
   font-size: 20px;
   font-weight: 700;
-  margin-right: 30px;
+  margin-right: 60px;
 }
 
 .header__navlink:last-child {
@@ -72,29 +108,87 @@
   background-image: url(images/lead-background.jpg);
   background-size: cover;
   background-position: center;
+  /* parallax-parent */
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
 
 }
 
 .lead__overlay {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 100px;
+  background-color: rgba(51, 51, 51, .5);
+  /* parallax-back */
+  transform: translateZ(-1px) scale(2);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .lead__title {
-  margin: 0;
-  margin-bottom: 50px;
-  font-size: 30px;
+  animation: title-popup 1s cubic-bezier(.19, 1, .22, 1) 1.5s;
+  margin: 100px 0 40px;
+  font-size: 68px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
+
+.parallax-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* parallax-base */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateZ(0);
+}
+
+/* .lead__title::before {
+  content: '';
+  opacity: 0;
+} */
 
 .lead__subtitle {
   margin: 0;
-  margin-bottom: 50px;
-  font-size: 25px;
+  margin-bottom: 75px;
+  font-size: 24px;
+  line-height: 1.5;
+  font-weight: 300;
+  animation: title-popup 1s cubic-bezier(.19, 1, .22, 1) 2s;
 }
 
 .lead__button {
+  width: 190px;
+  height: 60px;
+  padding: 0;
+  margin-bottom: 70px;
+  border: none;
+  border-radius: 40px;
+  background-color: transparent;
+  background-color: #b81a1a;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  animation: title-popup 1s cubic-bezier(.19, 1, .22, 1) 3s;
 }
 
+.lead__arrow {
+  width: 40px;
+  height: 20px;
+  animation: up-and-down 2s infinite ease-in-out;
 
+}
+
+.invisible {
+  opacity: 0;
+}
+
+/* Нужно понять, как сделать выплывающие заголовок и подзаголовок */
