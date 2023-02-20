@@ -105,11 +105,18 @@
   background-image: url(images/lead-background.jpg);
   background-size: cover;
   background-position: center;
+  height: 100vh;
 
 }
 
 .lead__overlay {
   background-color: rgba(51, 51, 51, .5);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 
@@ -154,46 +161,6 @@
   animation: up-and-down 2s infinite ease-in-out;
 
 }
-
-/* Параллаксы */
-
-.parallax-container {
-  perspective: 1px;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-.parallax__layer-base {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transform: translateZ(0);
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-}
-
-.parallax__layer-back {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transform: translateZ(-1px) scale(2);
-
-}
-
-.next-section {
-  height: 300px;
-}
-
-
 
 
 /* Нужно понять, как сделать выплывающие заголовок и подзаголовок */
