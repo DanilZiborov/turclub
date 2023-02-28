@@ -30,7 +30,7 @@
 .root {
   font-family: Lato, Arial, sans-serif;
   font-weight: 400;
-  background-color: gray;
+  background-color: #fff;
 }
 
 .header {
@@ -174,10 +174,101 @@
   animation-timing-function: cubic-bezier(.19, 1, .22, 1);
 }
 
-.next {
-  height: 500px;
-  background-color: pink;
+/* About */
+
+.about {
+  padding: 150px 0 135px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about__title {
+  margin: 0;
+  margin-bottom: 40px;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.19;
+
+}
+
+.about__paragraph {
+  margin: 0;
+  max-width: 760px;
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Каруселька картинок */
+
+.image-carousel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-carousel__image-wrapper {
+  position: relative;
+}
+
+.image-carousel__image {
+  max-width: 60vw;
+  transition: opacity 1s;
+}
+
+.image-carousel__cover-image {
+  max-width: 60vw;
+  position: absolute;
+  transition: opacity 1s;
+}
+
+.image-carousel__arrow {
+  width: 20px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+
+}
+
+.image-carousel__arrow_type_left {
+  left: -80px;
+
+}
+
+.image-carousel__arrow_type_right {
+  right: -80px;
+
+}
+
+.image-carousel__bullet-wrapper {
+  margin-bottom: 150px;
+  padding: 0;
+  padding-top: 16px;
+  list-style: none;
+  display: flex;
 }
 
 
-/* Нужно понять, как сделать выплывающие заголовок и подзаголовок */
+.image-carousel__bullet {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  margin-right: 10px;
+  background-color: rgb(167, 167, 167);
+  border: none;
+  border-radius: 50%;
+}
+
+.image-carousel__bullet_active {
+  background-color: rgb(100, 100, 100);
+
+}
+
+.transparent {
+  opacity: 0;
+}
+
+

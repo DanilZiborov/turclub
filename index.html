@@ -12,14 +12,14 @@
 <body class="root">
   <div class="page">
     <header class="header">
-      <img class="logo logo_place_header" src="images/logo_theme_dark.png" alt="#">
+      <img class="logo logo_place_header" src="images/logo_theme_dark.png" alt="">
       <nav class="header__navbar">
 
-        <a href="#" class="header__navlink">О нас</a>
-        <a href="#" class="header__navlink">Путешествия</a>
-        <a href="#" class="header__navlink">Отзывы</a>
-        <a href="#" class="header__navlink"> FAQ</a>
-        <a href="#" class="header__navlink"> Контакты</a>
+        <a href="" class="header__navlink">О нас</a>
+        <a href="" class="header__navlink">Путешествия</a>
+        <a href="" class="header__navlink">Отзывы</a>
+        <a href="" class="header__navlink"> FAQ</a>
+        <a href="" class="header__navlink"> Контакты</a>
 
       </nav>
       <section class="header__social">
@@ -35,11 +35,28 @@
         <p class="lead__subtitle">очаруйтесь Кавказом вместе с туристским клубом RiseUp</p>
         <button class="lead__button">Поехали!</button>
         <div class="lead__arrow-cover">
-          <img src="images/arrow.png" alt="#" class="lead__arrow">
+          <img src="images/arrow.png" alt="" class="lead__arrow">
         </div>
       </div>
     </section>
-    <section class="next"></section>
+    <section class="about">
+      <h2 class="about__title">О нас</h2>
+      <p class="about__paragraph">Тут Тимур напишет продающий текст. А пока знайте, что мы молодцы, красавчики, купите у нас тур, пожалуйста</p>
+    </section>
+    <section class="image-carousel">
+      <div class="image-carousel__image-wrapper">
+        <img src="" alt="" class="image-carousel__cover-image">
+        <img src="" alt="" class="image-carousel__image transparent">
+        <img src="images/carousel-arrow-left.png" alt="" class="image-carousel__arrow image-carousel__arrow_type_left">
+        <img src="images/carousel-arrow-right.png" alt=""
+          class="image-carousel__arrow image-carousel__arrow_type_right">
+      </div>
+      <ul class="image-carousel__bullet-wrapper">
+        <template class = "carousel-bullet-template">
+          <li class = "bullet-element"><button class="image-carousel__bullet"></button></li>
+        </template>
+      </ul>
+    </section>
   </main>
   </div>
   <script src="script.js"></script>
