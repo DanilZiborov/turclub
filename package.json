@@ -1,0 +1,19 @@
+{
+  "name": "turclub",
+  "version": "0.0.1",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanilZiborov/turclub.git"
+  },
+  "author": "Danil Ziborov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanilZiborov/turclub/issues"
+  },
+  "homepage": "https://github.com/DanilZiborov/turclub#readme"
+}

@@ -49,14 +49,15 @@ const carouselBulletTemplate = document.querySelector('.carousel-bullet-template
 
 const carouselBulletWrapper = document.querySelector('.image-carousel__bullet-wrapper');
 
+//активный кружочек
+
 //создаём общий счётчик, который показывает, на какой мы картинке
 
 let counter = 0;
 
 //функции листания картинок можно люто зарефакторить. надо обязательно потом это сделать
 
-//делаем функцию листания по стрелочкам, пока без кружочков
-//вправо
+//делаем функцию листания по стрелочкам
 
 function renderCarouselImage() {
   if (carouselPictureBottom.classList.contains('transparent')) {
@@ -104,7 +105,8 @@ function checkCounter() {
 //функция передачи id кружочка в каунтер и делания кружочка чёрным, а неактивного кружочка нечёрным
 
 function changeCounterByBullet(evt) {
-  carouselBulletWrapper.querySelector('.image-carousel__bullet_active').classList.remove('image-carousel__bullet_active');
+  const activeBullet = carouselBulletWrapper.querySelector('.image-carousel__bullet_active');
+  activeBullet.classList.remove('image-carousel__bullet_active');
   evt.target.classList.add('image-carousel__bullet_active');
   counter = Number(evt.target.id);
 }
@@ -121,7 +123,6 @@ function renderImageByBullet(evt) {
 
 //функция делания кружочков
 
-//осталось разобраться с изменением активного кружочка по стрелке
 
 function renderCarouselBullets() {
   carouselBulletWrapper.addEventListener('click', evt => {
@@ -138,10 +139,25 @@ function renderCarouselBullets() {
   }
 }
 
+//функция изменения активного кружочка
+
+function changeActiveBullet() {
+  const carouselBullets = Array.from(document.querySelectorAll('.image-carousel__bullet'));
+  const activeBullet = carouselBulletWrapper.querySelector('.image-carousel__bullet_active');
+  console.log(activeBullet);
+  activeBullet.classList.remove('image-carousel__bullet_active'); // обозвать, зарефакторить, избавиться от child
+  carouselBullets.forEach(item => {
+    if (Number(item.id) === counter) {
+      item.classList.add('image-carousel__bullet_active');
+    }
+  })
+}
+
 //вешаем слушатель на правую стрелку
 
 carouselArrowRight.addEventListener('click', () => {
   turnCarouselRight();
+  changeActiveBullet();
   console.log(counter);
 });
 
@@ -149,6 +165,7 @@ carouselArrowRight.addEventListener('click', () => {
 
 carouselArrowLeft.addEventListener('click', () => {
   turnCarouselLeft();
+  changeActiveBullet();
   console.log(counter);
 });
 
